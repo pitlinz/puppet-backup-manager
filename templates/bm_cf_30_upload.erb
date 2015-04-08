@@ -1,0 +1,41 @@
+
+##############################################################
+# Section "UPLOAD"
+# You can upload archives to remote hosts with different 
+# methods.
+#############################################################
+
+# Which method to use for uploading archives, you can put 
+# multiple methods here.
+# Available methods:
+# - scp
+# - ssh-gpg
+# - ftp
+# - rsync
+# - s3
+# - none
+
+# If you don't want to use any upload method (you don't want to
+# upload files to remote hosts) then choose "none"
+export BM_UPLOAD_METHOD="<%= @upload_method %>"
+
+
+export BM_UPLOAD_HOSTS="<%= @upload_hosts %>"
+
+# Where to put archives on the remote hosts (global)
+export BM_UPLOAD_DESTINATION="<%= @upload_destination %>"
+
+# Uncomment the 'export ...' line below to activate the uploaded archives
+# database.
+# Using the database will avoid extraneous uploads to remote hosts in the
+# case of running more than one backup-manager jobs per day (such as when
+# you are using different configuration files for different parts of your
+# filesystem).
+# Note that when you upload to multiple hosts, a single succesfull upload
+# will mark the archive as uploaded. Thus upload errors to specific hosts
+# will have to be resolved manually.
+# You can specify any filename, but it is recommended to keep the database
+# inside the archive repository. The variable's value has been preset to
+# that.
+#export BM_UPLOADED_ARCHIVES=${BM_REPOSITORY_ROOT}/${BM_ARCHIVE_PREFIX}-uploaded.list
+

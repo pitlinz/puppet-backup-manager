@@ -1,0 +1,67 @@
+
+##############################################################
+# Archives - let's focus on the precious tarballs...
+##############################################################
+
+# Each archive generated will be chmoded for security reasons
+# (BM_REPOSITORY_SECURE should be enabled for this).
+export BM_ARCHIVE_CHMOD="<%= @archive_chmod %>"
+
+# Number of days we have to keep an archive (Time To Live)
+export BM_ARCHIVE_TTL="<%= @archive_ttl %>"
+
+# Do you want to purge only the top-level directory or all
+# directories under BM_REPOSITORY_ROOT?
+export BM_REPOSITORY_RECURSIVEPURGE="false"
+
+# Do you want to replace duplicates by symlinks? 
+# (archive-DAY is a duplicate of archive-(DAY - 1) if they 
+# are both the same according to MD5 hashes).
+export BM_ARCHIVE_PURGEDUPS="true"
+
+# Prefix of every archive on that box (default is HOSTNAME)
+export BM_ARCHIVE_PREFIX="$HOSTNAME"
+
+# Should we purge only archives built with $BM_ARCHIVE_PREFIX
+export BM_ARCHIVE_STRICTPURGE="true"
+
+# You may want to nice the commands run for archive-creation
+# (Recommanded for desktop users.)
+# Choose a nice level from -20 (most favorable scheduling) to 19 (least favorable).
+export BM_ARCHIVE_NICE_LEVEL="10"
+
+# The backup method to use.
+# Available methods are:
+# - tarball
+# - tarball-incremental
+# - mysql
+# - pgsql
+# - svn
+# - pipe
+# - none
+# If you don't want to use any backup method (you don't want to
+# build archives) then choose "none"
+export BM_ARCHIVE_METHOD="<%= @archive_method %>"
+
+##############################################################
+# Encryption - because you cannot trust the place your 
+#              archives are
+##############################################################
+
+# If you want to encrypt your archives locally, Backup Manager 
+# can use GPG while building the archive (so the archive is never
+# written to the disk without being encrypted.
+
+# Note: this feature is only possible with the following archive types:
+# tar, tar.gz, tar.bz2
+
+# Uncomment the following line if you want to enable encryption
+# available method: gpg
+export BM_ENCRYPTION_METHOD="false"
+
+# The encryption will be made using a GPG ID
+# Examples:
+# export BM_ENCRYPTION_RECIPIENT=""
+# export BM_ENCRYPTION_RECIPIENT=""
+export BM_ENCRYPTION_RECIPIENT=""
+

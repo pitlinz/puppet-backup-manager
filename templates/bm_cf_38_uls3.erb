@@ -1,0 +1,19 @@
+
+##############################################################
+# The S3 method
+#############################################################
+
+# The Amazon S3 method requires that you secure an S3
+# account. See http://aws.amazon.com
+
+# The bucket to upload to. This bucket must be dedicated to backup-manager
+export BM_UPLOAD_S3_DESTINATION="<%= @upload_destination %>"
+
+# the S3 access key provided to you
+export BM_UPLOAD_S3_ACCESS_KEY="<%= @upload_user %>"
+
+# the S3 secret key provided to you
+export BM_UPLOAD_S3_SECRET_KEY="<%= @upload_passwd %>"
+
+# purge archives on remote hosts before uploading?
+export BM_UPLOAD_S3_PURGE="false"

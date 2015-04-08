@@ -1,0 +1,50 @@
+
+
+##############################################################
+# Section "BURNING" 
+# - Automatic CDR/CDRW/DVDR burning
+#############################################################
+
+# the method of burning archives from the list :
+#  - DVD    : burn archives on a DVD medium
+#             (that doesn't need formatting, like DVD+RW).
+#
+#  - DVD-RW : blank the DVD medium and burn archives 
+#             (recommanded for DVD-RW media).
+#
+#  - CDRW   : blank the CDRW and burn the whole 
+#             ARCHIVES_REPOSITORY or only 
+#             the generated archives.
+#
+#  - CDR    : burn the whole ARCHIVES_REPOSITORY or 
+#             only the generated archives.
+#  - none   : disable the burning system
+#
+# Note that if backup-manager is run from interactive prompt you
+# will be asked to insert disc(s) when needed
+
+export BM_BURNING_METHOD="<%= @burning_method %>"
+
+# When the CD is burnt, it is possible to check every file's 
+# MD5 checksum to see if the CD is not corrupted.
+export BM_BURNING_CHKMD5="false"
+
+# The device to use for mounting the cdrom
+export BM_BURNING_DEVICE="<%= @burning_device %>"
+
+# You can force cdrecord to use a specific device
+# Fill in the full path to the device to use or even
+# e.g. BM_BURNING_DEVFORCED="/dev/cdrom"
+# If none specified, the default cdrecord device will be used.
+export BM_BURNING_DEVFORCED=""
+
+# By default backup-manager will make Joliet media (using the mkisofs switches
+# : "-R -J"). You can change these if you want to use non-Joliet disc images.
+# Change this only if you know what you're doing. Refer to mkisofs(8) for
+# details.
+export BM_BURNING_ISO_FLAGS="-R -J"
+
+# enter here the max size of your media 
+# (usal sizes are 4200 for DVD media and 700 or 800 for CDR media)
+export BM_BURNING_MAXSIZE="650"
+

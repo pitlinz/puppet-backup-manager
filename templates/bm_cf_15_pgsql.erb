@@ -1,0 +1,33 @@
+
+
+##############################################################
+# Backup method: PostgreSQL
+#############################################################
+
+# This method is dedicated to PostgreSQL databases.
+# You should not use the tarball method for backing up database
+# directories or you may have corrupted archives.
+# Enter here the list of databases to backup.
+# Wildcard: __ALL__ (will dump all the databases in one archive)
+export BM_PGSQL_DATABASES="<%= @pgsql_databases %>"
+
+# The user who is allowed to read every databases filled in BM_PGSQL_DATABASES
+export BM_PGSQL_ADMINLOGIN="<%= @pgsql_adminlogin %>"
+
+# its password
+export BM_PGSQL_ADMINPASS="<%= @pgsql_adminpass %>"
+
+# the host where the database is
+export BM_PGSQL_HOST="<%= @pgsql_host %>"
+
+# the port where PostgreSQL listen to on the host
+export BM_PGSQL_PORT="<%= @pgsql_port %>"
+
+# which compression format to use? (gzip or bzip2)
+export BM_PGSQL_FILETYPE="<%= @pgsql_filetype %>"
+
+# Extra options to append to pg_dump
+# (take care to what you do; this will be silently added to the 
+# command line.)
+export BM_PGSQL_EXTRA_OPTIONS=""
+

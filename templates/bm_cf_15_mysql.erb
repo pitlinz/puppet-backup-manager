@@ -1,0 +1,39 @@
+
+##############################################################
+# Backup method: MYSQL
+#############################################################
+
+# This method is dedicated to MySQL databases.
+# You should not use the tarball method for backing up database
+# directories or you may have corrupted archives.
+# Enter here the list of databases to backup.
+# Wildcard: __ALL__ (will dump all the databases in one archive)
+export BM_MYSQL_DATABASES="<%= @mysql_databases %>"
+
+# The best way to produce MySQL dump is done by using the "--opt" switch 
+# of mysqldump. This make the dump directly usable with mysql (add the drop table
+# statements), lock the tables during the dump and other things.
+# This is recommended for full-clean-safe backups, but needs a 
+# privileged user (for the lock permissions).
+export BM_MYSQL_SAFEDUMPS="true"
+
+# The user who is allowed to read every databases filled in BM_MYSQL_DATABASES
+export BM_MYSQL_ADMINLOGIN="<%= @mysql_adminlogin %>"
+
+# its password
+export BM_MYSQL_ADMINPASS="<%= @mysql_adminpass %>"
+
+# the host where the database is
+export BM_MYSQL_HOST="<%= @mysql_host %>"
+
+# the port where MySQL listen to on the host
+export BM_MYSQL_PORT="<%= @mysql_port %>"
+
+# which compression format to use? (gzip or bzip2)
+export BM_MYSQL_FILETYPE="bzip2"
+
+# Extra options to append to mysqldump
+# (take care to what you do; this will be silently added to the 
+# command line.)
+export BM_MYSQL_EXTRA_OPTIONS=""
+

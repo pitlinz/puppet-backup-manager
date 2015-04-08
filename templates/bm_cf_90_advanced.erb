@@ -1,0 +1,24 @@
+
+##############################################################
+# Advanced settings, use this with care.
+#############################################################
+
+# Every output made can be sent to syslog
+# set this to "true" or "false"
+export BM_LOGGER="true"
+
+# Which level of messages do you want to log to syslog?
+# possible values are : debug,info,warning,error
+export BM_LOGGER_LEVEL="warning"
+
+# You can choose which facility to use
+export BM_LOGGER_FACILITY="user"
+
+# Enter here some shell script.
+# It will be executed before the first action of backup-manager.
+export BM_PRE_BACKUP_COMMAND="<%= @pre_backup_command %>"
+
+# Enter here some shell script.
+# It will be executed after the last action of backup-manager.
+export BM_POST_BACKUP_COMMAND="<%= @post_backup_command %>"
+

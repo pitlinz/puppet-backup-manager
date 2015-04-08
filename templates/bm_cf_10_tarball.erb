@@ -1,0 +1,64 @@
+
+##############################################################
+# Section "TARBALL"
+# - Backup method: tarball
+#############################################################
+
+# Archive filename format
+# 	long  : host-full-path-to-folder.tar.gz
+# 	short : parentfolder.tar.gz
+export BM_TARBALL_NAMEFORMAT="long"
+
+# Type of archives
+# Available types are:
+#     tar, tar.gz, tar.bz2, tar.lz, dar, zip.
+# Make sure to satisfy the appropriate dependencies 
+# (bzip2, dar, lzma, ...).
+export BM_TARBALL_FILETYPE="tar.gz"
+
+# You can choose to build archives remotely over SSH.
+# You will then need to fill the BM_UPLOAD_SSH variables 
+# (BM_UPLOAD_SSH_HOSTS, BM_UPLOAD_SSH_USER, BM_UPLOAD_SSH_KEY).
+# If this boolean is set to true, archive will be saved locally (in 
+# BM_REPOSITORY_ROOT but will be built by the remote host).
+# Thus, BM_TARBALL_DIRECTORIES will be used to backup remote directories.
+# Those archive will be prefixed with the remote host name.
+export BM_TARBALL_OVER_SSH="false"
+
+# Do you want to dereference the files pointed by symlinks ? 
+# enter true or false (true can lead to huge archives, be careful).
+export BM_TARBALL_DUMPSYMLINKS="<%= @tarball_dumpsymlinks %>"
+
+# Targets to backup
+
+# You can use two different variables for defining the targets of 
+# your backups, either a simple space-separated list (BM_TARBALL_DIRECTORIES)
+# or an array (BM_TARBALL_TARGETS[]).
+# Use the first one for simple path that doesn't contain spaces in their name.
+# Use the former if you want to specify paths to backups with spaces.
+
+# It's recommanded to use BM_TARBALL_TARGETS[] though.
+# Warning! You *must not* use both variables at the same time.
+# NOTE: The Debian package will only update BM_TARBALL_DIRECTORIES
+
+# Paths without spaces in their name:
+export BM_TARBALL_DIRECTORIES="<%= @bm_tarball_directories %>"
+
+# If one or more of the targets contain a space, use the array:
+# declare -a BM_TARBALL_TARGETS
+# BM_TARBALL_TARGETS[0]="/etc"
+# BM_TARBALL_TARGETS[1]="/boot"
+# export BM_TARBALL_TARGETS
+
+# Files to exclude when generating tarballs, you can put absolute 
+# or relative paths, Bash wildcards are possible.
+export BM_TARBALL_BLACKLIST="/var/archives <%= @tarball_blacklist %>"
+
+# With the "dar" filetype, you can choose a maximum slice limit.
+export BM_TARBALL_SLICESIZE="1000M"
+
+# Extra options to append to the tarball generation 
+# (take care to what you do; this will be silently added to the 
+# command line.)
+export BM_TARBALL_EXTRA_OPTIONS="<%= @tarball_extra_options %>"
+

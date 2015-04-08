@@ -1,0 +1,24 @@
+
+##############################################################
+# Repository - everything about where archives are
+#############################################################
+
+# Where to store the archives
+export BM_REPOSITORY_ROOT="<%= @repository_root %>"
+
+# Where to place temporary files
+export BM_TEMP_DIR="<%= @temp_dir %>"
+
+# For security reasons, the archive repository and the generated 
+# archives will be readable/writable by a given user/group.
+# This is recommended to set this to true.
+export BM_REPOSITORY_SECURE="true"
+
+# The repository will be readable/writable only by a specific 
+# user:group pair if BM_REPOSITORY_SECURE is set to true.
+export BM_REPOSITORY_USER="<%= @repository_user %>"
+export BM_REPOSITORY_GROUP="<%= @repository_group %>"
+# You can also choose the permission to set the repository, default 
+# is 770, pay attention to what you do there!
+export BM_REPOSITORY_CHMOD="770"
+

@@ -1,0 +1,21 @@
+
+##############################################################
+# The RSYNC method
+#############################################################
+
+# Which directories should be backuped with rsync
+export BM_UPLOAD_RSYNC_DIRECTORIES="<%= @rsync_directories %>"
+
+# Destination for rsync uploads (overrides BM_UPLOAD_DESTINATION) 
+export BM_UPLOAD_RSYNC_DESTINATION="<%= @rsync_destination %>"
+
+# The list of remote hosts, if you want to enable the upload
+# system, just put some remote hosts here (fqdn or IPs)
+# Leave it empty if you want to use the hosts that are defined in
+# BM_UPLOAD_HOSTS
+export BM_UPLOAD_RSYNC_HOSTS="<%= @rsync_hosts %>"
+
+# Do you want to dereference the files pointed by symlinks?   
+# enter true or false (true can lead to huge archives, be careful).    
+export BM_UPLOAD_RSYNC_DUMPSYMLINKS="false"
+
