@@ -44,6 +44,8 @@ class backupmanager::conf::archive(
    	#    require => Concat['/etc/backup-manager.conf']
    	#}
 
+	$archive_methods_string = join($archive_method,' ')
+
   	concat::fragment { 'archives':
     	target  => '/etc/backup-manager.conf',
     	content => template("backupmanager/bm_cf_02_archives.erb"),
