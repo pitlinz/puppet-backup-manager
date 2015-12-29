@@ -3,6 +3,8 @@ class backupmanager::conf::burning(
   	$burning_method         = "none",
   	$burning_device         = "/dev/cdrom",
   	$burning_maxsize        = "650",
+
+  	$target					= "/etc/backup-manager.conf",
 ) {
 
     include backupmanager::conf
@@ -11,7 +13,7 @@ class backupmanager::conf::burning(
    	#}
 
   	concat::fragment { 'burning':
-    	target  => '/etc/backup-manager.conf',
+    	target  => $target,
     	content => template("backupmanager/bm_cf_40_burning.erb"),
     	order   => '40'
   	}

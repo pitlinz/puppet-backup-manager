@@ -27,7 +27,7 @@ export BM_TARBALL_OVER_SSH="false"
 
 # Do you want to dereference the files pointed by symlinks ? 
 # enter true or false (true can lead to huge archives, be careful).
-export BM_TARBALL_DUMPSYMLINKS="<%= @tarball_dumpsymlinks %>"
+export BM_TARBALL_DUMPSYMLINKS="<%= @dumpsymlinks %>"
 
 # Targets to backup
 
@@ -42,7 +42,7 @@ export BM_TARBALL_DUMPSYMLINKS="<%= @tarball_dumpsymlinks %>"
 # NOTE: The Debian package will only update BM_TARBALL_DIRECTORIES
 
 # Paths without spaces in their name:
-export BM_TARBALL_DIRECTORIES="<%= @bm_tarball_directories %>"
+export BM_TARBALL_DIRECTORIES="<%= @directories %>"
 
 # If one or more of the targets contain a space, use the array:
 # declare -a BM_TARBALL_TARGETS
@@ -52,7 +52,7 @@ export BM_TARBALL_DIRECTORIES="<%= @bm_tarball_directories %>"
 
 # Files to exclude when generating tarballs, you can put absolute 
 # or relative paths, Bash wildcards are possible.
-export BM_TARBALL_BLACKLIST="/var/archives <%= @tarball_blacklist %>"
+export BM_TARBALL_BLACKLIST="/var/archives <%= @blacklist %>"
 
 # With the "dar" filetype, you can choose a maximum slice limit.
 export BM_TARBALL_SLICESIZE="1000M"
@@ -60,5 +60,5 @@ export BM_TARBALL_SLICESIZE="1000M"
 # Extra options to append to the tarball generation 
 # (take care to what you do; this will be silently added to the 
 # command line.)
-export BM_TARBALL_EXTRA_OPTIONS="<%= @tarball_extra_options %>"
+export BM_TARBALL_EXTRA_OPTIONS="<%= @extra_options %>"
 

@@ -5,10 +5,10 @@
 
 # Each archive generated will be chmoded for security reasons
 # (BM_REPOSITORY_SECURE should be enabled for this).
-export BM_ARCHIVE_CHMOD="<%= @archive_chmod %>"
+export BM_ARCHIVE_CHMOD="<%= @chmod %>"
 
 # Number of days we have to keep an archive (Time To Live)
-export BM_ARCHIVE_TTL="<%= @archive_ttl %>"
+export BM_ARCHIVE_TTL="<%= @ttl %>"
 
 # Do you want to purge only the top-level directory or all
 # directories under BM_REPOSITORY_ROOT?
@@ -41,7 +41,7 @@ export BM_ARCHIVE_NICE_LEVEL="10"
 # - none
 # If you don't want to use any backup method (you don't want to
 # build archives) then choose "none"
-export BM_ARCHIVE_METHOD="<%= @archive_methods_string %>"
+export BM_ARCHIVE_METHOD="<%= @methods_string %>"
 
 ##############################################################
 # Encryption - because you cannot trust the place your 

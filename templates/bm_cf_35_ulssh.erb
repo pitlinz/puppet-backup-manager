@@ -8,19 +8,19 @@
 export BM_UPLOAD_SSH_USER="<%= upload_user %>"
 
 # The private key to use for opening the connection
-export BM_UPLOAD_SSH_KEY="<%= @upload_ssh_key %>"
+export BM_UPLOAD_SSH_KEY="<%= @ssh_key %>"
 
 # specific ssh hosts 
 export BM_UPLOAD_SSH_HOSTS="<%= @upload_hosts %>"
 
 # port to use for SSH connections (leave blank for default one)
-export BM_UPLOAD_SSH_PORT="<%= @upload_ssh_port %>"
+export BM_UPLOAD_SSH_PORT="<%= @ssh_port %>"
 
 # destination for ssh uploads (overrides BM_UPLOAD_DESTINATION)
 export BM_UPLOAD_SSH_DESTINATION="<%= @upload_destination %>"
 
 # purge archives on remote hosts before uploading?
-export BM_UPLOAD_SSH_PURGE="true"
+export BM_UPLOAD_SSH_PURGE="<%= @purge %>"
 
 # If you set BM_UPLOAD_SSH_PURGE, you can specify a time to live 
 # for archives uploaded with SSH.

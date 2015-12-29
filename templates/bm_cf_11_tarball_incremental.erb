@@ -6,11 +6,11 @@
 
 # Which frequency to use for the master tarball?
 # possible values: weekly, monthly
-export BM_TARBALLINC_MASTERDATETYPE="weekly"
+export BM_TARBALLINC_MASTERDATETYPE="<%= @masterdatetype %>"
 
 # Number of the day, in the BM_TARBALLINC_MASTERDATETYPE frequency
 # when master tarballs should be made
-export BM_TARBALLINC_MASTERDATEVALUE="6"
+export BM_TARBALLINC_MASTERDATEVALUE="<%= @masterdatevalue %>"
 
 # Examples: you want to make master tarballs every friday:
 # BM_TARBALLINC_MASTERDATETYPE="weekly"

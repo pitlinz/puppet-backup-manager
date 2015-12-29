@@ -7,11 +7,11 @@
 # Use FTP secured transfers (FTP over TLS)
 # User, password and data will be uploaded encrypted with SSL.
 # Passive mode will be automaticaly activated
-export BM_UPLOAD_FTP_SECURE="<%= @upload_ftp_secure %>"
+export BM_UPLOAD_FTP_SECURE="<%= @ftp_secure %>"
 
 # Do you want to use FTP passive mode?
 # This is mandatory for NATed/firewalled environments 
-export BM_UPLOAD_FTP_PASSIVE="<%= @upload_ftp_passive %>"
+export BM_UPLOAD_FTP_PASSIVE="<%= @ftp_passive %>"
 
 # Test the FTP connection before starting archives upload.
 # This will enable BM to try sending a 2MB test file before
@@ -19,13 +19,13 @@ export BM_UPLOAD_FTP_PASSIVE="<%= @upload_ftp_passive %>"
 export BM_UPLOAD_FTP_TEST="false"
 
 # the user to use for the FTP connections/transfers
-export BM_UPLOAD_FTP_USER="<%= @upload_user %>"
+export BM_UPLOAD_FTP_USER="<%= @ftp_user %>"
 
 # the FTP user's password
-export BM_UPLOAD_FTP_PASSWORD="<%= @upload_passwd %>"
+export BM_UPLOAD_FTP_PASSWORD="<%= @ftp_passwd %>"
 
 # FTP specific remote hosts
-export BM_UPLOAD_FTP_HOSTS="<%= @upload_hosts %>"
+export BM_UPLOAD_FTP_HOSTS="<%= @ftp_hosts %>"
 
 # purge archives on remote hosts before uploading?
 export BM_UPLOAD_FTP_PURGE="true"
@@ -33,8 +33,8 @@ export BM_UPLOAD_FTP_PURGE="true"
 # You can specify a time to live for archives uploaded with FTP
 # This can let you use different ttl's locally and remotely
 # By default, BM_ARCHIVE_TTL will be used.
-export BM_UPLOAD_FTP_TTL="<%= @upload_ttl %>"
+export BM_UPLOAD_FTP_TTL="<%= @ftp_ttl %>"
 
 # destination for FTP uploads (overrides BM_UPLOAD_DESTINATION)
-export BM_UPLOAD_FTP_DESTINATION="<%= @upload_destination %>"
+export BM_UPLOAD_FTP_DESTINATION="<%= @ftp_destination %>"
 

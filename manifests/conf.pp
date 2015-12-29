@@ -7,6 +7,8 @@
  */
 
 class backupmanager::conf(
+  $conffile			 = '/etc/backup-manager.conf',
+
   # 01 repository
   $repository_root    = "/var/archives",
   $temp_dir           = "/tmp",
@@ -20,24 +22,24 @@ class backupmanager::conf(
 
 ) {
 
-    concat { '/etc/backup-manager.conf':
+    concat { "${conffile}":
 		ensure => present,
   	}
 
-  	concat::fragment { 'head':
-    	target  => '/etc/backup-manager.conf',
+  	concat::fragment { "${conffile}head":
+    	target  => "${conffile}",
     	content => template("backupmanager/bm_cf_00_head.erb"),
     	order   => '00'
   	}
 
-  	concat::fragment { 'repository':
-    	target  => '/etc/backup-manager.conf',
+  	concat::fragment { "${conffile}_repository":
+    	target  => "${conffile}",
     	content => template("backupmanager/bm_cf_01_repository.erb"),
     	order   => '01'
   	}
 
-  	concat::fragment { 'advanced':
-    	target  => '/etc/backup-manager.conf',
+  	concat::fragment { "${conffile}_advanced":
+    	target  => "${conffile}",
     	content => template("backupmanager/bm_cf_90_advanced.erb"),
     	order   => '90'
   	}

@@ -8,7 +8,7 @@
 # directories or you may have corrupted archives.
 # Enter here the list of databases to backup.
 # Wildcard: __ALL__ (will dump all the databases in one archive)
-export BM_MYSQL_DATABASES="<%= @mysql_databases %>"
+export BM_MYSQL_DATABASES="<%= @databases %>"
 
 # The best way to produce MySQL dump is done by using the "--opt" switch 
 # of mysqldump. This make the dump directly usable with mysql (add the drop table
@@ -18,22 +18,22 @@ export BM_MYSQL_DATABASES="<%= @mysql_databases %>"
 export BM_MYSQL_SAFEDUMPS="true"
 
 # The user who is allowed to read every databases filled in BM_MYSQL_DATABASES
-export BM_MYSQL_ADMINLOGIN="<%= @mysql_adminlogin %>"
+export BM_MYSQL_ADMINLOGIN="<%= @adminlogin %>"
 
 # its password
-export BM_MYSQL_ADMINPASS="<%= @mysql_adminpass %>"
+export BM_MYSQL_ADMINPASS="<%= @adminpass %>"
 
 # the host where the database is
-export BM_MYSQL_HOST="<%= @mysql_host %>"
+export BM_MYSQL_HOST="<%= @host %>"
 
 # the port where MySQL listen to on the host
-export BM_MYSQL_PORT="<%= @mysql_port %>"
+export BM_MYSQL_PORT="<%= @port %>"
 
 # which compression format to use? (gzip or bzip2)
-export BM_MYSQL_FILETYPE="bzip2"
+export BM_MYSQL_FILETYPE="<% @filetype %>"
 
 # Extra options to append to mysqldump
 # (take care to what you do; this will be silently added to the 
 # command line.)
-export BM_MYSQL_EXTRA_OPTIONS=""
+export BM_MYSQL_EXTRA_OPTIONS="<% @extra_options %>"
 

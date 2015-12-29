@@ -2,8 +2,11 @@
  * configure cron-job to run backup manager
  */
 class backupmanager::cronjob(
-	$start_minute 	= "00",
-	$start_hour		= "01",
+	$minute 	= "0",
+	$hour		= "1",
 ) {
+	file {"/etc/cron.d/backup-manager":
+		content => "${minute} ${hour} * * * root /usr/sbin/backup-manager 2>&1 >> /var/log/backup-manager.log\n"
+	}
 
 }
